@@ -1,0 +1,72 @@
+<!-- Developer Portal for TestuffAPI Integration -->
+
+<div class="developer-page">
+
+<h1>TestuffAPI Developers</h1>
+<p>Welcome, developer! Here you can quickly integrate Testuff with your custom tools, dashboards, and automation frameworks.</p>
+
+<h2>API Documentation</h2>
+<p>
+Access the full documentation for all endpoints, schema and advanced usage.<br>
+<a href="https://testuff.com/product/help/api/" target="_blank">Testuff Full API Docs</a>
+</p>
+
+<h2>Use Cases</h2>
+<ul>
+  <li><strong>Sync with GitHub:</strong> Send defects or test results from Testuff to GitHub Issues. <a href="https://testuff.com/product/help/github/" target="_blank">How-to</a></li>
+  <li><strong>Automated Dashboards:</strong> Create live CI/CD dashboards by fetching run and coverage data using API.</li>
+  <li><strong>External Tools:</strong> Submit results from frameworks like PyTest, Selenium, Jenkins.<br>
+    See <a href="https://testuff.com/product/help/automation-parameters/" target="_blank">Automation Example</a>.
+  </li>
+</ul>
+
+<h2>Authentication & Endpoints</h2>
+<ul>
+  <li><strong>HTTP Basic Auth:</strong> Every request uses your Testuff email and password.</li>
+  <li><strong>API Base URL:</strong> <code>https://serviceX.testuff.com/api/v0/</code> (replace X with your company’s number)</li>
+  <li><strong>SSL/HTTPS:</strong> All traffic is encrypted.</li>
+  <li><strong>Response Format:</strong> Default is JSON; set <code>format=xml</code> or <code>format=yaml</code> as needed.</li>
+</ul>
+
+<h2>Code Examples</h2>
+<h3>Python</h3>
+<pre>
+<code class="language-python">
+import requests
+BASE_URL = "https://serviceX.testuff.com/api/v0"
+AUTH = ("your@email.com", "your_password")
+resp = requests.get(f"{BASE_URL}/projects", auth=AUTH)
+print(resp.json())
+</code>
+</pre>
+
+<h3>JavaScript (Node.js)</h3>
+<pre>
+<code class="language-js">
+const axios = require('axios');
+const BASE_URL = 'https://serviceX.testuff.com/api/v0';
+const auth = { username: 'your@email.com', password: 'your_password' };
+
+axios.get(`${BASE_URL}/projects`, { auth })
+  .then(res => console.log(res.data));
+</code>
+</pre>
+
+<h3>cURL</h3>
+<pre>
+<code>
+curl -u 'your@email.com:your_password' \
+  'https://serviceX.testuff.com/api/v0/projects'
+</code>
+</pre>
+
+<h2>Additional Resources</h2>
+<ul>
+  <li><a href="https://github.com/TestuffAPI/python-testuff?tab=readme-ov-file" target="_blank">Python SDK on GitHub</a></li>
+  <li><a href="https://testuff.com/product/help/automation-parameters/" target="_blank">Automation Parameters</a></li>
+</ul>
+
+<p>For help with scripting or advanced integration, see official docs or open an issue on <a href="https://github.com/TestuffAPI/python-testuff?tab=readme-ov-file" target="_blank">GitHub</a>.</p>
+</div>
+
+<!-- Optional: Add custom CSS to style code blocks or layout per your theme -->
