@@ -5,7 +5,6 @@ from typing import Optional, List, Dict, Union, Any, get_origin, get_args
 class BaseModel:
     ALLOWED_PARAMS: List[str] = []
     FIELDS_READ_ONLY: List[str] = []
-    _param_mapping = {}
     _field_mapping = {}
 
     @classmethod
@@ -117,9 +116,6 @@ class Test(BaseModel):
     FIELDS_READ_ONLY = ['suite_name', 'branch_id', 'project_id', 'comments', 'last_run_status', 'create_date',
                                 'create_user_id', 'create_user_name', 'update_date' , 'update_user_id', 'update_user_name']
     ALLOWED_PARAMS = ["id", "suite_id", "branch_id", "lab_id"]
-    _param_mapping = { # temporaty until fixing api
-        "branch_id": "branch",
-    }
     _field_mapping = {
         "stage": "status",
         "category": "test_category"
